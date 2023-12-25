@@ -1,0 +1,25 @@
+version: "3.4"
+services:
+  backend:
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: local
+    container_name: backend
+    networks:
+      - internal_network
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: always
+    ports:
+      - "8888:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - backend
+    networks:
+      - internal_network
+networks:
+  internal_network:
+

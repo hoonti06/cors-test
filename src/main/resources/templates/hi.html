@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hi</title>
+    <script>
+        /* <![CDATA[ */
+        function postHi() {
+            document.hi.action = 'hi';
+            document.hi.submit();
+        }
+    </script>
+</head>
+<body>
+<form name="hi" action="#" method="post">
+    <div>
+        <h1>안녕</h1>
+    </div>
+    <a class="btn_next" href="javascript:postHi()">다음</a>
+</form>
+
+</body>
+</html>
